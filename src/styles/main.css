@@ -39,6 +39,9 @@ main{
   background-color: darkturquoise;
 }
 .profile-name{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: 20px;
   margin-left: 5%;
   font-weight: 600;
@@ -64,18 +67,25 @@ main{
 .side-menu{
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 20px;
   height: 100%;
 }
 .menu-item{
   margin: 0 auto;
   padding: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background-color: #e0c4fd;
   text-align: center;
   width: 100%;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 14px;
+}
+.menu-item:hover{
+  background-color: #ae73ec;
+}
+.menu-item a{
+  color: black;
+  text-decoration: none;
 }
 .side-end{
   background-color: rgb(246, 92, 92);
@@ -98,30 +108,34 @@ main{
 .card{
   margin-bottom: 20px;
 }
+.right-panel .card-body .card-text{
+  white-space: normal;
+  height: 100px;
+  overflow: hidden;
+}
 .right-panel{
   margin-top: 50px;
   overflow: scroll;
   overflow-x: hidden;
-  width: 30%;
+  width: 35%;
   margin-left: 20px;
-}
-::-webkit-scrollbar
-{
-  border-radius: 12px;
-	width: 12px;
-	background-color: #F5F5F5;
-}
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
+  align-content: center;
 }
 .sv-event{
-  margin-top: 30px;
-  font-size: 24px;
+  margin-top: 35px;
+  font-size: 22px;
   position:fixed;
   top:0;
   width:100%;
   z-index:100;
+}
+::-webkit-scrollbar{
+  border-radius: 12px;
+	width: 12px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 12px;
+	width: 12px;
+	background-color: #e0c4fd;
 }

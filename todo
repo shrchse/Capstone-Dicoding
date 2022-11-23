@@ -2,9 +2,16 @@ Membuat halaman login & regist
 Membuat halaman create post
 Membuat landing page
 Membuat tampilan mobile
+Membuat tampilan desktop [done]
 
 Fitur : 
 Membuat postingan
 Menghapus postingan
 Mencari postingan
 Menyimpan postingan
+
+Lain-lain: 
+Membuat Router
+Membuat progressive web app
+Membuat back-end (firebase)
+Membuat user auth (firebase)

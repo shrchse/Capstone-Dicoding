@@ -1,0 +1,139 @@
+@media screen and (min-width: 426px){
+    .canvas{
+      width: 35%;
+    }
+    .main-content{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      padding: 50px 0 30px 20px;
+    }
+    .right-panel{
+      display: block;
+      height: 90vh;
+      padding: 10px;
+      padding-top: 20px;
+      overflow: scroll;
+      overflow-x: hidden;
+      align-content: center;
+    }
+    .right-panel .card-body .card-text{
+      white-space: normal;
+      height: 70px;
+      overflow: hidden;
+      white-space: wrap;
+      text-overflow: ellipsis;
+    }
+    ::-webkit-scrollbar{
+      border-radius: 12px;
+      width: 12px;
+      background-color: #F5F5F5;
+    }
+    ::-webkit-scrollbar-thumb{
+      border-radius: 12px;
+      width: 12px;
+      background-color: #e0c4fd;
+    }
+  }
+  
+  @media screen and (min-width: 769px){
+    .main-content{
+      grid-template-columns: 1fr 2.5fr 1fr;
+      padding: 0;
+    }
+    .left-panel{
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 95%;
+      margin: auto;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: rgb(247, 247, 247);
+    }
+    .mid-panel, .right-panel{
+      height: 95vh;
+      margin: auto;
+      padding-top: 0;
+      padding-bottom: -30px;
+    }
+    .profile{
+      display: grid;
+      padding-bottom: 35px;
+      grid-template-columns: 1fr 3fr;
+      background-color: transparent;
+      padding: 20px;
+      padding-left: 5px;
+    }
+    .profile-pic{
+      width: 70px;
+      height: 70px;
+      border-radius: 35px;
+      background-color: darkturquoise;
+    }
+    .profile-name{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 20px;
+      margin-left: 5%;
+      font-weight: 600;
+    }
+    .btn-edit-profile{
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .search-bar input{
+      height: 60px;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .search-bar input:focus{
+      outline: none;
+      border: 1px solid #ae73ec;
+    }
+    .side-menu{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      height: 100%;
+    }
+    .menu-item{
+      margin: 0 auto;
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #e0c4fd;
+      text-align: center;
+      width: 100%;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    .menu-item:hover{
+      background-color: #ae73ec;
+    }
+    .menu-item a{
+      color: black;
+      text-decoration: none;
+    }
+    .side-end{
+      background-color: rgb(246, 92, 92);
+      border-radius: 8px;
+      width: 120px;
+      height: 50px;
+      text-align: center;
+      margin: 90px auto 0;
+      color: white;
+    }
+    .sd-bar-logo{
+      text-align: center;
+      margin-top: 10px;
+    }
+    .canvas{
+      display: none;
+    }
+    .hamburger{
+      color: transparent;
+    }
+    header{
+      display: none;
+    }
+  }

@@ -99,11 +99,13 @@
     }
     .menu-item{
       margin: 0 auto;
-      padding: 15px;
+      padding: 20px 0;
       margin-bottom: 20px;
       background-color: #e0c4fd;
       text-align: center;
-      width: 100%;
+      text-decoration: none;
+      color: black;
+      width: 85%;
       border-radius: 12px;
       font-size: 14px;
     }

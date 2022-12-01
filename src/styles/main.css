@@ -146,9 +146,12 @@ main{
     width: 100%;
     height: 100%;
 }
-main{
+.bg{
   background: rgb(224,196,253);
   background: linear-gradient(90deg, rgba(224,196,253,1) 0%, rgba(143,198,253,1) 100%); 
+}
+main{
+  padding-top: 16px;
 }
 header{
     top: 0;

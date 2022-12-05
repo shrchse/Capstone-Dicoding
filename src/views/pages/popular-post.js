@@ -1,7 +1,7 @@
 const PopularPost = {
   async render() {
     return `
-          <h3> popular post js </h3>`;
+          <h3> popular </h3>`;
   },
 
   async afterRender() {

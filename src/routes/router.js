@@ -1,11 +1,11 @@
+import CreatePost from '../views/pages/create-post';
 import MyPost from '../views/pages/my-post';
 import NearbyPost from '../views/pages/nearby-post';
-import PopularPost from '../views/pages/popular-post';
 
 const routes = {
   '/': MyPost,
   '/nearby': NearbyPost,
-  '/popular': PopularPost,
+  '/post': CreatePost,
 };
 
 export default routes;

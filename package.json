@@ -36,6 +36,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
+    "firebase": "^9.14.0",
     "regenerator-runtime": "^0.13.9"
   }
 }

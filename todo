@@ -1,17 +1,40 @@
-Membuat halaman login & regist
-Membuat halaman create post
-Membuat landing page
-Membuat tampilan mobile
-Membuat tampilan desktop [done]
+// Membuat halaman login & regist
+// Membuat halaman create post
+// Membuat landing page
+// Membuat tampilan mobile
+// Membuat tampilan desktop [done]
 
-Fitur : 
-Membuat postingan
-Menghapus postingan
-Mencari postingan
-Menyimpan postingan
+// Fitur : 
+// Membuat postingan
+// Menghapus postingan
+// Mencari postingan
+// Menyimpan postingan
 
-Lain-lain: 
-Membuat Router
-Membuat progressive web app
-Membuat back-end (firebase)
-Membuat user auth (firebase)
+// Lain-lain: 
+// Membuat Router
+// Membuat progressive web app
+// Membuat back-end (firebase)
+// Membuat user auth (firebase)
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCANL7i5K7Gb5GWQDDRVWEBenLcOcENtIQ",
+  authDomain: "dicoding-countrybute.firebaseapp.com",
+  projectId: "dicoding-countrybute",
+  storageBucket: "dicoding-countrybute.appspot.com",
+  messagingSenderId: "853459631529",
+  appId: "1:853459631529:web:2a39400a42df33769dd8b8",
+  measurementId: "G-TJW4ZRXBHR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

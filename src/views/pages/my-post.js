@@ -1,8 +1,9 @@
 /* eslint-disable max-len */
 import {
-  getFirestore, collection, getDocs, deleteDoc, doc, addDoc,
+  getFirestore, collection, getDocs, deleteDoc,
+  doc, addDoc, orderBy, query, getDoc, updateDoc,
 } from 'firebase/firestore';
-import {createPostTemplate} from '../templates/template-factory';
+import {createPostTemplate, formCreate, formCreateEdit} from '../templates/template-factory';
 
 const db = getFirestore();
 const collRef = collection(db, 'posts');
@@ -10,7 +11,7 @@ const collRef = collection(db, 'posts');
 const MyPost = {
   async render() {
     return `
-        <div class="add-post card text-center">
+        <div id="" class="add-post card text-center">
         <div class="card-body">
           <h5 class="card-title">Your Homepage</h5>
           <p class="card-text">Create and Share your Event to Community</p>
@@ -22,8 +23,9 @@ const MyPost = {
   },
 
   async afterRender() {
+    const qy = query(collRef, orderBy('timestamp', 'desc'));
     const container = document.querySelector('.mid-panel');
-    getDocs(collRef)
+    getDocs(qy, collRef)
         .then((snapshot) => {
           const posts = [];
           snapshot.docs.forEach((doc) => {
@@ -53,51 +55,41 @@ const MyPost = {
         }
       }
     });
-
+    // edit page
     postContainer.addEventListener('click', (ev) => {
       if (ev.target.id === 'update') {
         const id = ev.target.getAttribute('data-id');
-        const thisss = document.querySelector('#p-title');
-        console.log(id, thisss.outerText);
+        const docRef = doc(db, 'posts', id);
+
+        getDoc(docRef).then((doc) => {
+          const post = doc.data();
+          document.getElementById('form-create').innerHTML = '';
+          document.getElementById('form-create').innerHTML = formCreateEdit(post);
+          const updateForm = document.querySelector('.add');
+          updateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            updateDoc(docRef, {
+              title: updateForm.title.value,
+              description: updateForm.description.value,
+              additional: updateForm.additional.value,
+              location: updateForm.location.value,
+              category: updateForm.category.value,
+              timestamp: new Date(),
+            }).then(() => {
+              updateForm.reset();
+              location.reload();
+            }).catch((err) => {
+              console.log(err.message);
+            });
+          });
+        });
       }
     });
 
     container.addEventListener('click', (e) => {
       if (e.target.id === 'create-post-btn') {
-        document.getElementById('form-create').innerHTML = `
-        <div class="card form-card">
-          <form class="add">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title">
-              <label for="floatingInput">Title</label>
-            </div>
-            <div class="mb-3">
-              <label for="description" class="form-label">Description</label>
-              <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="additional" name="additional" placeholder="Additional Link">
-              <label for="floatingInput">Additional Link</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="location" name="location" placeholder="Location">
-              <label for="floatingInput">Location</label>
-            </div>
-            <select class="form-select" id="category" name="category">
-              <option selected>Category</option>
-              <option value="Community Event">Community Event</option>
-              <option value="Volunteer">Volunteer</option>
-              <option value="Campaign">Campaign</option>
-              <option value="Other">Other</option>
-            </select>
-            <button class="btn btn-success" id="submit">Submit</button>
-          </form>
-        </div>
-        <div id="btn-target"></div>`;
-
+        document.getElementById('form-create').innerHTML = formCreate();
         document.getElementById('create-post-btn').innerText = `Creating...`;
-        document.getElementById('btn-target').innerHTML = `
-        <a class="btn btn-danger" id="close">Close</a>`;
         // add post
         const form = document.querySelector('.add');
         form.addEventListener('submit', (e) => {
@@ -110,7 +102,6 @@ const MyPost = {
             category: form.category.value,
             timestamp: new Date(),
           }).then(() => {
-            form.reset();
             location.reload();
           });
         });

@@ -1,11 +1,9 @@
-import CreatePost from '../views/pages/create-post';
 import MyPost from '../views/pages/my-post';
-import NearbyPost from '../views/pages/nearby-post';
+import feedPage from '../views/pages/feed-page';
 
 const routes = {
   '/': MyPost,
-  '/nearby': NearbyPost,
-  '/post': CreatePost,
+  '/feed': feedPage,
 };
 
 export default routes;

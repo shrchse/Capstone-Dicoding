@@ -117,13 +117,16 @@
       text-decoration: none;
     }
     .side-end{
-      background-color: rgb(246, 92, 92);
-      border-radius: 8px;
-      width: 120px;
-      height: 50px;
-      text-align: center;
-      margin: 90px auto 0;
-      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+      min-height: 150px;
+    }
+    .side-end .btn{
+      width: 60%;
+      height: 40px;
     }
     .sd-bar-logo{
       text-align: center;

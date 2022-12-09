@@ -1,4 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
+import '../scripts/global/config';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import '../scripts/utils/drawer-init.js';

@@ -1,154 +1,15 @@
-/* *{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-main{
-  width: 100vw;
-  height: 100vh;
-  padding: 30px 30px;
-  display: flex;
-  background: rgb(224,196,253);
-  background: linear-gradient(90deg, rgba(224,196,253,1) 0%, rgba(143,198,253,1) 100%); 
-}
-.main-page{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.left-panel{
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: 100%;
-  border-radius: 12px;
-  margin: auto 0;
-  padding: 30px;
-  background-color: rgb(247, 247, 247);
-}
-.profile{
-  display: grid;
-  padding-bottom: 35px;
-  grid-template-columns: 1fr 3fr;
-}
-.profile-pic{
-  width: 70px;
-  height: 70px;
-  border-radius: 35px;
-  background-color: darkturquoise;
-}
-.profile-name{
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 20px;
-  margin-left: 5%;
-  font-weight: 600;
-}
-.btn-edit-profile{
-  font-size: 18px;
-  text-decoration: none;
-}
-.search-bar input{
-  height: 60px;
-  border-radius: 50px;
-  background: #dceff9;
-  box-shadow:  20px 20px 60px #bbcbd4,
-               -20px -20px 60px #fdffff;
-  border: 1.5px solid white;
-  padding: 20px;
-  border-radius: 12px;
-}
-.search-bar input:focus{
-  outline: none;
-  border: 1px solid #ae73ec;
-}
-.side-menu{
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  height: 100%;
-}
-.menu-item{
-  margin: 0 auto;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: #e0c4fd;
-  text-align: center;
-  width: 100%;
-  border-radius: 12px;
-  font-size: 14px;
-}
-.menu-item:hover{
-  background-color: #ae73ec;
-}
-.menu-item a{
-  color: black;
-  text-decoration: none;
-}
-.side-end{
-  background-color: rgb(246, 92, 92);
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  color: white;
-}
-.sd-bar-logo{
-  text-align: center;
-  margin-top: 10px;
-}
-.mid-panel{
-  margin-left: 30px;
-  margin-right: 10px;
-  width: 90%;
-  border-radius: 12px;
-  overflow: auto;
-}
-.card{
-  margin-bottom: 20px;
-}
-.right-panel .card-body .card-text{
-  white-space: normal;
-  height: 100px;
-  overflow: hidden;
-}
-.right-panel{
-  margin-top: 50px;
-  overflow: scroll;
-  overflow-x: hidden;
-  width: 35%;
-  margin-left: 20px;
-  align-content: center;
-}
-.sv-event{
-  margin-top: 35px;
-  font-size: 22px;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-}
-::-webkit-scrollbar{
-  border-radius: 12px;
-	width: 12px;
-	background-color: #F5F5F5;
-}
-::-webkit-scrollbar-thumb{
-  border-radius: 12px;
-	width: 12px;
-	background-color: #e0c4fd;
-} */
-
 *{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
-main{
+.bg{
   background: rgb(224,196,253);
   background: linear-gradient(90deg, rgba(224,196,253,1) 0%, rgba(143,198,253,1) 100%); 
+}
+main{
+  padding-top: 16px;
 }
 header{
     top: 0;
@@ -252,8 +113,17 @@ li a{
     padding: 50px 0 30px 0;
     overflow-y: hidden;
 }
+.card-image {
+  width: 100%;
+  height: 18vw;
+  object-fit: cover;
+  border-radius: 4px;
+}
 .card{
-    margin-bottom: 30px;
+    margin: auto;
+    margin-bottom: 25px;
+    border: none;
+    width: 100%;
 }
 .left-panel{
   display: none;
@@ -272,4 +142,69 @@ li a{
 }
 ::-webkit-scrollbar-thumb{
   display: none;
+}
+.card-text.no-overflow{
+  height: 25px;
+  overflow: hidden;
+}
+.add-post{
+  width: 100%;
+  margin: 0 0 15px;
+}
+.post-btn{
+  width: 48%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.post-btn:last-child{
+  margin-bottom: 0;
+}
+.post-container-btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-card{
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 30px 10px;
+}
+#submit{
+  width: 100%;
+}
+#close{
+  width: 96%;
+  margin-bottom: 30px;
+}
+label.form-label{
+  text-align: left;
+}
+.form-select{
+  margin-bottom: 30px;
+}
+#create-post-btn, #btn-target{
+  margin: auto;
+  width: 76%;
+}
+
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }

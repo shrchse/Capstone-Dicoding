@@ -3,6 +3,7 @@ import '../scripts/global/config';
 import '../styles/main.css';
 import '../styles/responsive.css';
 import '../scripts/utils/drawer-init.js';
+import '../scripts/utils/authentication.js';
 import '../views/pages/my-post';
 import App from '../views/app';
 import swRegister from './utils/sw-register';

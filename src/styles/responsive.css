@@ -1,4 +1,4 @@
-@media screen and (min-width: 426px){
+@media screen and (min-width: 500px){
     .canvas{
       width: 35%;
     }
@@ -35,7 +35,7 @@
     }
   }
   
-  @media screen and (min-width: 769px){
+  @media screen and (min-width: 830px){
     .main-content{
       grid-template-columns: 1fr 2.5fr 1fr;
       padding: 0;

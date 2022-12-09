@@ -120,6 +120,11 @@ li a{
   object-fit: cover;
   border-radius: 4px;
 }
+
+.card-img-top {
+  margin-top: 1em;
+}
+
 .card{
     margin: auto;
     margin-bottom: 25px;

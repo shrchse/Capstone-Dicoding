@@ -17,25 +17,28 @@
   <div class="bg">
     <header>
         <button id="hamburger" class="hamburger" type="button">☰</button>
-        <div class="logo-header">Logo</div>
+        <div class="logo-header"></div>
     </header>
 
     <nav id="canvas" class="canvas">
       <div class="profile">
         <div class="profile-item pic"></div>
-        <div class="profile-item name">Amazida</div>
+        <div class="profile-item name"><p class="nama-user"></p></div>
       </div>
-      <ul>
-        <li> 
-          <div class="form-floating mb-3">
-            <input type="search" class="form-control" id="floatingInput" placeholder="Search">
-            <label for="floatingInput">Search</label>
+      <div class="side-bar">
+        <div class="form-floating mb-3">
+          <input type="search" class="form-control" id="floatingInput" placeholder="Search">
+          <label for="floatingInput">Search</label>
+          <div class="d-grid gap-2 last-chl">
+            <a class="btn btn-outline-primary" href="/#/home">My Post</a>
+            <a class="btn btn-outline-warning" href="/#/feed">Feed</a>
           </div>
-        </li>
-        <li> <a href="/"> My Post </a></li>
-        <li> <a href="/#/feed"> Feed </a></li>
-        <li> Logout </li>
-      </ul>
+        </div>
+        <div class="d-grid gap-2">
+          <a class="btn btn-primary" data-bs-toggle="modal" href="#modal-login" role="button">Login</a>
+          <button class="btn btn-danger" id="logout-btn">Logout</button>
+        </div>
+      </div>
     </nav>
 
     <section class="main-content">
@@ -43,13 +46,14 @@
         <div class="profile">
           <div class="profile-pic"></div>
           <div class="profile-name">
-            <p class="nama-user"></p>
+            <p class="nama-user-de">Test</p>
           </div>
         </div>
         <div class="search-bar">
           <div class="form-floating mb-3">
-            <input type="search" class="form-control" id="floatingInput" placeholder="Search...">
-            <label for="floatingInput">Search</label>
+            <form id="queries">
+              <input type="search" class="form-control" id="search" placeholder="Search...">
+            </form>
           </div>
         </div>
 
@@ -59,27 +63,14 @@
         </div>
         <div class="side-end">
           <a class="btn btn-primary" data-bs-toggle="modal" href="#modal-login" role="button">Login</a>
-          <button class="btn btn-danger" id="logout-btn">Logout</button>
+          <button class="btn btn-danger" id="logout-btn2">Logout</button>
         </div>
         <div class="sd-bar-logo">Logo</div>
       </div>
       
-      <div class="mid-panel" id="main">
-      </div>
+      <div class="mid-panel" id="main"></div>
       
-      <div class="right-panel">
-        <div class="card" style="width: 95%;">
-          <img src="Volunteer.webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">IT Matsuri 2022</h5>
-            <p class="card-text">Hello guys, jumpa lagi bersama kami, teman-teman dari HMTI 2022
-              Kali ini mau ngabarin bro dan sis sekalian, kalo galama lagi, kita bakal ngadain IT Matsuri
-            </p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
-        </div>
-        </div>
-      </div>    
+      <div class="right-panel"></div>    
     </div>
 
     <div class="modal fade" id="modal-login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -141,6 +132,14 @@
         </div>
       </div>
     </div>
+
+    <footer class="bg-dark py-5">
+      <div class="container text-light text-center">
+        <p class="display-5 mb-3">Countrybute</p>
+        <small class="text-white-50">Copyright Srhchse.Lin. All right reserved.</small>
+      </div>
+    </footer>
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

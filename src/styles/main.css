@@ -23,38 +23,67 @@ header{
     font-size: 32px;
 }
 .logo-header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    background-image: url(../public/icons/icon-72x72.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: center;
 }
 .canvas{
     background-color: rgb(231, 226, 226);
-    width: 60%;
+    width: 65%;
     top: 10%;
     height: 90%;
     transform: translate(-100%, 0);
     transition: transform 0.3s ease-in-out;
     z-index: 10;
-    
     position: fixed;
 }
 .canvas.open{
+    width: 65%;
     transform: translate(0, 0);
+}
+.centerthis{
+  margin: 0 auto;
+}
+.side-bar{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  height: 80%;
+  background-color: wheat;
+  justify-content: space-between;
+}
+.last-chl{
+  margin-top: 20px;
 }
 .profile{
     background-color: rgb(153, 152, 152);
-    height: 25%;
+    height: 20%;
+    width: 100%;
     display: grid;
-}
+    grid-template-columns: 1fr 2fr;
+    margin: auto;
+    overflow: hidden;
+  }
 .profile-item{
-    margin-left: 15px;
+  margin: auto;
+  margin-left: 0;
+}
+.profile-item.name{
+  width: 85%;
+  overflow: hidden;
 }
 .pic{
     background-color: aliceblue;
+    margin:auto;
+    margin-left: 30px;
+    margin-right: 10px;
     width: 70px;
     height: 70px;
     border-radius: 40px;
+}
+.profile-name{
+  margin: auto;
 }
 .name{
     font-size: 18px;
@@ -178,5 +207,5 @@ label.form-label{
   width: 76%;
 }
 .full-widht{
-  width: 55vw;
+  width: 100vw;
 }

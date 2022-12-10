@@ -114,4 +114,18 @@ const formCreateEdit = (post) => `
     </div>
 `;
 
-export {createPostTemplate, createPostTemplateFeed, formCreate, formCreateEdit};
+const createRightPostTemplate = (post) => {
+  `<div class="card" style="width: 95%;">
+    <img src="Volunteer.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+            <h5 class="card-title">IT Matsuri 2022</h5>
+            <p class="card-text">Hello guys, jumpa lagi bersama kami, teman-teman dari HMTI 2022
+                Kali ini mau ngabarin bro dan sis sekalian, kalo galama lagi, kita bakal ngadain IT Matsuri
+            </p>
+            <a href="#" class="btn btn-primary">Selengkapnya</a>
+        </div>
+    </div>
+  </div>`;
+};
+
+export {createPostTemplate, createPostTemplateFeed, formCreate, formCreateEdit, createRightPostTemplate};

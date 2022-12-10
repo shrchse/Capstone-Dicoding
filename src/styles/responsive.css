@@ -1,14 +1,21 @@
 @media screen and (min-width: 426px){
     .canvas{
-      width: 35%;
+      width: 60%;
     }
     .main-content{
       display: grid;
       grid-template-columns: 2fr 1fr;
-      padding: 50px 0 30px 20px;
+      padding: 10px 0 30px 20px;
+    }
+    .hamburger{
+      width: 100px;
+    }
+    .mid-panel{
+      margin-top: 32px;
     }
     .right-panel{
       display: block;
+      margin-top: 32px;
       height: 90vh;
       padding: 10px;
       padding-top: 20px;
@@ -32,6 +39,9 @@
       border-radius: 12px;
       width: 12px;
       background-color: #e0c4fd;
+    }
+    .full-widht{
+      width: 65vw;
     }
   }
   
@@ -57,18 +67,17 @@
       padding-bottom: -30px;
     }
     .profile{
-      display: grid;
-      padding-bottom: 35px;
-      grid-template-columns: 1fr 2fr;
+      height: 50%;
       background-color: transparent;
       padding: 20px;
       padding-left: 5px;
     }
     .profile-pic{
       width: 70px;
-      height: 70px;
+      height: 90px;
       border-radius: 35px;
-      background-color: darkturquoise;
+      background-image: url(../public/user.png);
+      background-repeat: no-repeat;
     }
     p.nama-user{
       margin: 0;
@@ -79,6 +88,7 @@
       text-overflow: ellipsis;
       padding: auto;
       font-size: 20px;
+      width: 100%;
       margin: auto;
       margin-left: 5%;
       font-weight: 600;

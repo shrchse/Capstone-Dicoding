@@ -15,8 +15,8 @@ signUp.addEventListener('submit', (evt) => {
   evt.preventDefault();
 
   const emailSign = signUp['sign-email'].value;
-  const password = signUp['sign-pw']. value;
-  const name = signUp['sign-name']. value;
+  const password = signUp['sign-pw'].value;
+  const name = signUp['sign-name'].value;
 
   createUserWithEmailAndPassword(userAuth, emailSign, password)
       .then((credential) => {
@@ -82,6 +82,57 @@ loginForm.addEventListener('submit', (evt) => {
   });
 });
 
+const logoutBtn2 = document.querySelector('#logout-btn2');
+logoutBtn2.addEventListener('click', (evt) => {
+  evt.preventDefault();
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger',
+    },
+    buttonsStyling: false,
+  });
+
+  const getDisplayName = document.querySelector('.nama-user');
+
+  if (getDisplayName.innerText != 'Guest') {
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        signOut(userAuth)
+            .then(() => {
+              Swal.fire({
+                title: 'Logging Out',
+                text: 'Operation Complete',
+                icon: 'success',
+              }).then(() => {
+                location.reload();
+              });
+            });
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Operation Cancelled',
+            'success',
+        );
+      }
+    });
+  } else {
+    Swal.fire({
+      icon: 'question',
+      title: 'You\'re Login as Guest',
+    });
+  }
+});
+
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
@@ -136,11 +187,19 @@ logoutBtn.addEventListener('click', (evt) => {
 onAuthStateChanged(userAuth, (user) => {
   if (user) {
     const getDisplayName = document.querySelector('.nama-user');
+    const getDisplayName2 = document.querySelector('.nama-user-de');
+
+    getDisplayName.innerText = '';
+    getDisplayName2.innerText = '';
+
     getDisplayName.innerText += `${user.displayName}`;
-    getDisplayName.innerText += '';
+    getDisplayName2.innerText += `${user.displayName}`;
   } else {
     const getDisplayName = document.querySelector('.nama-user');
+    const getDisplayName2 = document.querySelector('.nama-user-de');
+    getDisplayName.innerText = '';
+    getDisplayName2.innerText = '';
     getDisplayName.innerText += 'Guest';
-    getDisplayName.innerText += '';
+    getDisplayName2.innerText += 'Guest';
   }
 });

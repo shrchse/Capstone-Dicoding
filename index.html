@@ -26,21 +26,21 @@
         <div class="profile-item name"><p class="nama-user"></p></div>
       </div>
       <div class="side-bar">
-        <div class="form-floating mb-3">
-          <input type="search" class="form-control" id="floatingInput" placeholder="Search">
-          <label for="floatingInput">Search</label>
+        <form id="queries2">
+          <input type="search" class="form-control" id="search2" placeholder="Search">
+          <label for="floatingInput"></label>
+        </form>
           <div class="d-grid gap-2 last-chl">
             <a class="btn btn-outline-primary" href="/#/home">My Post</a>
             <a class="btn btn-outline-warning" href="/#/feed">Feed</a>
           </div>
-        </div>
         <div class="d-grid gap-2">
           <a class="btn btn-primary" data-bs-toggle="modal" href="#modal-login" role="button">Login</a>
           <button class="btn btn-danger" id="logout-btn">Logout</button>
         </div>
       </div>
     </nav>
-
+    
     <section class="main-content">
       <div class="left-panel">
         <div class="profile">
@@ -52,7 +52,7 @@
         <div class="search-bar">
           <div class="form-floating mb-3">
             <form id="queries">
-              <input type="search" class="form-control" id="search" placeholder="Search...">
+              <input type="search" class="form-control" id="search" placeholder="Location...">
             </form>
           </div>
         </div>
@@ -65,11 +65,9 @@
           <a class="btn btn-primary" data-bs-toggle="modal" href="#modal-login" role="button">Login</a>
           <button class="btn btn-danger" id="logout-btn2">Logout</button>
         </div>
-        <div class="sd-bar-logo">Logo</div>
       </div>
       
       <div class="mid-panel" id="main"></div>
-      
       <div class="right-panel"></div>    
     </div>
 
@@ -134,9 +132,14 @@
     </div>
 
     <footer class="bg-dark py-5">
-      <div class="container text-light text-center">
-        <p class="display-5 mb-3">Countrybute</p>
-        <small class="text-white-50">Copyright Srhchse.Lin. All right reserved.</small>
+      <div class="flex-footer">
+        <div>
+          test
+        </div>
+        <div class="container text-light text-center">
+          <p class="display-5 mb-3">Countrybute</p>
+          <small class="text-white-50">Copyright Srhchse.Lin. All right reserved.</small>
+        </div>
       </div>
     </footer>
 

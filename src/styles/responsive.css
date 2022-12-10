@@ -64,7 +64,6 @@
       height: 95vh;
       margin: auto;
       padding-top: 0;
-      padding-bottom: -30px;
     }
     .profile{
       height: 50%;
@@ -81,7 +80,7 @@
     }
     p.nama-user{
       margin: 0;
-    }
+    }    
     .profile-name{
       overflow: hidden;
       white-space: nowrap;

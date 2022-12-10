@@ -76,6 +76,9 @@ const MyPost = {
             });
           }
         });
+
+        const noRightMenu = document.querySelector('.right-panel');
+        noRightMenu.innerHTML = '';
         // edit page
         postContainer.addEventListener('click', (ev) => {
           if (ev.target.id === 'update') {
@@ -98,19 +101,18 @@ const MyPost = {
                   category: updateForm.category.value,
                   timestamp: new Date(),
                 }).then(() => {
+                  updateDoc(feedRef, {
+                    title: updateForm.title.value,
+                    description: updateForm.description.value,
+                    additional: updateForm.additional.value,
+                    location: updateForm.location.value,
+                    category: updateForm.category.value,
+                    timestamp: new Date(),
+                  });
                   Swal.fire({
                     icon: 'success',
                     title: 'Success',
                     text: 'Your post has been created!',
-                  }).then(() => {
-                    updateDoc(feedRef, {
-                      title: updateForm.title.value,
-                      description: updateForm.description.value,
-                      additional: updateForm.additional.value,
-                      location: updateForm.location.value,
-                      category: updateForm.category.value,
-                      timestamp: new Date(),
-                    });
                   });
                 }).then(() => {
                   location.reload();

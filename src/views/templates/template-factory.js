@@ -3,7 +3,7 @@ const createPostTemplate = (posts) => `
     <div class="card mb-3 cp-card" style="max-width: 100%;">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="${posts.category}.webp" class="card-image" alt="img-event">
+            <img loading="lazy" src="${posts.category}.webp" class="card-image" alt="img-event">
         </div>
         <div class="col-md-8">
         <div class="card-body">
@@ -29,7 +29,7 @@ const createPostTemplateFeed = (posts) => `
     <div class="card mb-3 cp-card">
     <div class="row g-0">
         <div class="col-md-4">
-            <img src="${posts.category}.webp" class="card-image" alt="img-event">
+            <img loading="lazy" src="${posts.category}.webp" class="card-image" alt="img-event">
         </div>
         <div class="col-md-8">
         <div class="card-body">
@@ -114,18 +114,4 @@ const formCreateEdit = (post) => `
     </div>
 `;
 
-const createRightPostTemplate = (post) => {
-  `<div class="card" style="width: 95%;">
-    <img src="Volunteer.webp" class="card-img-top" alt="...">
-    <div class="card-body">
-            <h5 class="card-title">IT Matsuri 2022</h5>
-            <p class="card-text">Hello guys, jumpa lagi bersama kami, teman-teman dari HMTI 2022
-                Kali ini mau ngabarin bro dan sis sekalian, kalo galama lagi, kita bakal ngadain IT Matsuri
-            </p>
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-        </div>
-    </div>
-  </div>`;
-};
-
-export {createPostTemplate, createPostTemplateFeed, formCreate, formCreateEdit, createRightPostTemplate};
+export {createPostTemplate, createPostTemplateFeed, formCreate, formCreateEdit};

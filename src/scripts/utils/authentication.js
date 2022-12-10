@@ -5,10 +5,10 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from 'firebase/auth';
-import {collection, doc, getFirestore, setDoc} from 'firebase/firestore';
+// import {collection, doc, getFirestore, setDoc} from 'firebase/firestore';
 
 const userAuth = getAuth();
-const db = getFirestore();
+// const db = getFirestore();
 
 const signUp = document.querySelector('#sign-form');
 signUp.addEventListener('submit', (evt) => {
@@ -23,25 +23,28 @@ signUp.addEventListener('submit', (evt) => {
         updateProfile(userAuth.currentUser, {
           displayName: name,
         });
-
-        const userRef = collection(db, credential.user.uid);
-        const collRef = collection(db, 'posts');
-        const dataUser = {
-          title: '',
-          description: '',
-          additional: '',
-          location: '',
-          category: '',
-          timestamp: new Date(),
-        };
-        setDoc(doc(userRef), dataUser);
-        setDoc(doc(collRef), dataUser);
+        Swal.fire({
+          title: 'Success',
+          icon: 'success',
+          text: 'Account Created, Welcome ' + name,
+        }).then(() => {
+          location.reload();
+        });
+      }).catch((err) => {
+        if (err.code === 'auth/email-already-in-use') {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Email Already In Use',
+          });
+        }
       });
 });
 
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
+  evt.stopPropagation();
   const email = loginForm['login-input-email'].value;
   const pword = loginForm['login-input-pw'].value;
 
@@ -50,28 +53,94 @@ loginForm.addEventListener('submit', (evt) => {
     Swal.fire({
       icon: 'success',
       title: 'Logged In',
-      text: 'Login Success, Welcome ' + userAuth.currentUser.uid,
+      text: 'Welcome '+ userAuth.currentUser.displayName,
+      showConfirmButton: false,
+      timer: 1500,
+    }).then(() => {
+      location.reload();
     });
   }).catch((err) => {
-    console.log(err.message);
+    if (err.code === 'auth/wrong-password') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Invalid Email/Password',
+      });
+    } else if (err.code === 'auth/too-many-requests') {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Too Many Request, Try Again Later!',
+      });
+    } else if (err.code === 'auth/user-not-found') {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Not Found',
+        text: 'User Not Found!',
+      });
+    }
   });
 });
 
 const logoutBtn = document.querySelector('#logout-btn');
 logoutBtn.addEventListener('click', (evt) => {
   evt.preventDefault();
-  signOut(userAuth).then(() => {
-  }).catch((err) => {
-    console.log(err.message);
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: 'btn btn-success',
+      cancelButton: 'btn btn-danger',
+    },
+    buttonsStyling: false,
   });
+
+  const getDisplayName = document.querySelector('.nama-user');
+
+  if (getDisplayName.innerText != 'Guest') {
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        signOut(userAuth)
+            .then(() => {
+              Swal.fire({
+                title: 'Logging Out',
+                text: 'Operation Complete',
+                icon: 'success',
+              }).then(() => {
+                location.reload();
+              });
+            });
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+            'Cancelled',
+            'Operation Cancelled',
+            'success',
+        );
+      }
+    });
+  } else {
+    Swal.fire({
+      icon: 'question',
+      title: 'You\'re Login as Guest',
+    });
+  }
 });
 
 onAuthStateChanged(userAuth, (user) => {
   if (user) {
     const getDisplayName = document.querySelector('.nama-user');
     getDisplayName.innerText += `${user.displayName}`;
-    console.log('user logged in : ', user.displayName);
+    getDisplayName.innerText += '';
   } else {
-    console.log('Logged Out');
+    const getDisplayName = document.querySelector('.nama-user');
+    getDisplayName.innerText += 'Guest';
+    getDisplayName.innerText += '';
   }
 });

@@ -11,7 +11,10 @@ const createPostTemplate = (posts) => `
             <p class="card-text">${posts.location} - ${posts.category} </p>
             <p class="card-text">${posts.description}</p>
             <a href="${posts.additional}" class="card-text">${posts.additional}</a>
-            <p class="card-text"><small class="text-muted">${posts.timestamp.toDate()}</small></p>
+            <p class="card-text">
+                <small class="text-muted">Posted by ${posts.author}</small> <br>
+                <small class="text-muted">${posts.timestamp.toDate()}</small>
+            </p>
             <div class="post-container-btn">
                 <button data-id='${posts.id}' class="post-btn btn btn-danger" id="delete">Delete</button>
                 <button onClick="document.getElementById('formRef').scrollIntoView();" data-id='${posts.id}' class="post-btn btn btn-warning" id="update">Edit</button>
@@ -34,7 +37,10 @@ const createPostTemplateFeed = (posts) => `
             <p class="card-text">${posts.location} - ${posts.category} </p>
             <p class="card-text">${posts.description}</p>
             <a href="${posts.additional}" class="card-text">${posts.additional}</a>
-            <p class="card-text"><small class="text-muted">${posts.timestamp.toDate()}</small></p>
+            <p class="card-text">
+                <small class="text-muted">Posted by ${posts.author}</small> <br>
+                <small class="text-muted">${posts.timestamp.toDate()}</small>
+            </p>
         </div>
         </div>
     </div>

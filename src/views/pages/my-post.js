@@ -28,7 +28,6 @@ const MyPost = {
       if (user) {
         const collRef = collection(db, userDb.currentUser.uid);
         const feedRef = collection(db, 'posts');
-
         const qy = query(collRef, orderBy('timestamp', 'desc'));
         const container = document.querySelector('.mid-panel');
         getDocs(qy, collRef)
@@ -130,6 +129,7 @@ const MyPost = {
             form.addEventListener('submit', (e) => {
               e.preventDefault();
               addDoc(collRef, {
+                author: user.displayName,
                 title: form.title.value,
                 description: form.description.value,
                 additional: form.additional.value,
@@ -138,6 +138,7 @@ const MyPost = {
                 timestamp: new Date(),
               }).then((docRef) => {
                 setDoc(doc(feedRef, docRef.id), {
+                  author: user.displayName,
                   title: form.title.value,
                   description: form.description.value,
                   additional: form.additional.value,

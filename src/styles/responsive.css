@@ -4,7 +4,7 @@
     }
     .main-content{
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 2fr 0fr;
       padding: 10px 0 30px 20px;
     }
     .hamburger{
@@ -41,11 +41,14 @@
       background-color: #e0c4fd;
     }
     .full-widht{
-      width: 65vw;
+      width: 90vw;
     }
   }
   
   @media screen and (min-width: 769px){
+    .full-widht{
+      width: 75vw;
+    }
     .main-content{
       grid-template-columns: 1fr 2.5fr 1fr;
       padding: 0;

@@ -52,7 +52,7 @@ const feedPage = {
     searchQuery2.addEventListener('submit', (evt) => {
       evt.preventDefault();
       const searchFor2 = searchQuery2['search2'].value;
-      window.location.href = '/#/feed/' + searchFor2;
+      window.location.href = '/Dicoding-Capstone/dist/#/feed/' + searchFor2;
       const result = query(collRef, where('location', '==', searchFor2));
       container.innerHTML += '';
 
@@ -71,7 +71,7 @@ const feedPage = {
     searchQuery.addEventListener('submit', (evt) => {
       evt.preventDefault();
       const searchFor = searchQuery['search'].value;
-      window.location.href = '/#/feed/' + searchFor;
+      window.location.href = '/Dicoding-Capstone/dist/#/feed/' + searchFor;
       const result = query(collRef, where('location', '==', searchFor));
       container.innerHTML += '';
 

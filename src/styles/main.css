@@ -50,14 +50,15 @@ header{
   padding: 20px;
   flex-direction: column;
   height: 80%;
-  background-color: wheat;
+  background: rgb(210,222,255);
+  background: linear-gradient(90deg, rgba(210,222,255,1) 0%, rgba(238,241,255,1) 100%);
   justify-content: space-between;
 }
 .last-chl{
   margin-top: 20px;
 }
 .profile{
-    background-color: rgb(153, 152, 152);
+    background-color: #D2DAFF;
     height: 20%;
     width: 100%;
     display: grid;
@@ -74,7 +75,7 @@ header{
   overflow: hidden;
 }
 .pic{
-    background-color: aliceblue;
+    background-color: #B1B2FF;
     margin:auto;
     margin-left: 30px;
     margin-right: 10px;
@@ -208,4 +209,44 @@ label.form-label{
 }
 .full-widht{
   width: 100vw;
+}
+
+/* custom */
+.btn-outline-primary, .btn-outline-warning{
+  color: black;
+  background-color: #9e9ff1;
+  border-color: #EEF1FF;
+}
+.btn-outline-primary:hover, .btn-outline-warning:hover{
+  background-color: #6b6cc0;
+  border-color: #D2DAFF;
+  color: #EEF1FF;
+}
+.btn-primary{
+  background-color: #637bf1;
+  border-color: #46a495;
+}
+.btn-danger{
+  background-color: #da6262;
+}
+.btn-warning{
+  background-color: #f3f066;
+  border: #bac157;
+}
+.footer{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  min-height: 200px;
+  background-color: #645CAA;
+  padding: 40px;
+}
+.footer-container{
+  text-align: end;
+  margin: auto;
+  width: 100%;
+}
+.left{
+  text-align: start;
 }

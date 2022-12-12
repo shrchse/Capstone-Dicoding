@@ -170,7 +170,7 @@ const MyPost = {
           text: 'Login or Sign-Up to Access',
           footer: 'Returning to main page...',
         }).then(() => {
-          window.location.href = '/Capstone-Dicoding/dist/#/feed';
+          window.location.href = '#/feed';
         });
       }
     });
